@@ -1,0 +1,11 @@
+
+version: 2
+
+sources:
+    - name: "qiwa_Scds"
+      description: "A starter dbt model"
+      database: "Dev_Row"
+      schema: "QIWA"
+      tables: 
+          - name: "LABOROFFICEAPPOINTMENT"
+           

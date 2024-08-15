@@ -1,0 +1,15 @@
+
+{{ config(
+     materialized='view'
+
+) }}
+
+with source_data as (
+select PK_LOADDEDSUBSERVICES, SUBSERVICENAMEAR, SUBSERVICENAMEEN, STATUSID, FK_SERVICEID, REQUESTERIDNO, REQUESTERNAME, REQUESTERUSERID, CREATIONDATE, CREATEDBY, LASTMODIFIEDDATE, LASTMODIFIEDBY
+from    {{ source('qiwa','LOADDEDSUBSERVICES') }}
+ 
+)
+
+select *
+from source_data
+

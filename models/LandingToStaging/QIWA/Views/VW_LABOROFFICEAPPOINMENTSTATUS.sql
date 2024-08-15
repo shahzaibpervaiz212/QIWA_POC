@@ -1,0 +1,17 @@
+
+{{ config(
+     materialized='view'
+
+) }}
+
+
+with source_data as (
+SELECT
+LOAPPOINTMENTSTATUSID, LOAPPOINTMENTSTATUSAR, LOAPPOINTMENTSTATUSEN, ACTIVE, ORDERSERIAL, CREATEDBY, CREATIONDATE, LASTMODIFIEDBY, LASTMODIFIEDDATE
+FROM   {{ source('qiwa','LABOROFFICEAPPOINMENTSTATUS') }}
+ 
+)
+
+select *
+from source_data
+
