@@ -40,7 +40,7 @@ models:
     
     # Applies to all files under models/example/
     example:
-      +target_database: DEV_STAGING
+      +target_database: STAGING
       +target_schema: QIWA
       +materialized: table
 snapshots:
@@ -48,6 +48,6 @@ snapshots:
     
     # Applies to all files under models/example/
 
-    +target_database: DEV_STAGING
+    +target_database: STAGING
     +target_schema: QIWA
        

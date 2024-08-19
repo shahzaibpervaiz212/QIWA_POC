@@ -4,7 +4,7 @@ version: 2
 sources:
     - name: "qiwa"
       description: "A starter dbt model"
-      database: "Dev_Row"
+      database: "DEV_ROW"
       schema: "QIWA"
       tables: 
           - name: "LOOKUP_LOAPPOINTMENTTIME"
