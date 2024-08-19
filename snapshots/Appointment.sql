@@ -3,7 +3,7 @@
 
 {{
     config(
-      target_database='Dev_Staging',
+      target_database='Staging',
       target_schema='qiwa',
       unique_key='id',
 
