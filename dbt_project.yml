@@ -39,15 +39,16 @@ models:
   my_new_project:
     
     # Applies to all files under models/example/
-    example:
-      +target_database: DEV_STAGING
+    LandingToStaging:
+      +tags: "QIWA_POC"
+      +target_database: STAGING
       +target_schema: QIWA
       +materialized: table
 snapshots:
   my_new_project:
     
     # Applies to all files under models/example/
-
-    +target_database: DEV_STAGING
+    +tags: "QIWA_POC_SNAPSHOT"
+    +target_database: STAGING
     +target_schema: QIWA
        

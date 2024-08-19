@@ -1,17 +1,21 @@
-
-{{ config(
-     materialized='view'
-
-) }}
+{{ config(materialized="view") }}
 
 
-with source_data as (
-SELECT
-LOAPPOINTMENTSTATUSID, LOAPPOINTMENTSTATUSAR, LOAPPOINTMENTSTATUSEN, ACTIVE, ORDERSERIAL, CREATEDBY, CREATIONDATE, LASTMODIFIEDBY, LASTMODIFIEDDATE
-FROM   {{ source('qiwa','LABOROFFICEAPPOINMENTSTATUS') }}
- 
-)
+with
+    source_data as (
+        select
+            loappointmentstatusid,
+            loappointmentstatusar,
+            loappointmentstatusen,
+            active,
+            orderserial,
+            createdby,
+            creationdate,
+            lastmodifiedby,
+            lastmodifieddate
+        from {{ source("qiwa", "LABOROFFICEAPPOINMENTSTATUS") }}
+
+    )
 
 select *
 from source_data
-
