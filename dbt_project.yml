@@ -39,7 +39,8 @@ models:
   my_new_project:
     
     # Applies to all files under models/example/
-    example:
+    LandingToStaging:
+      +tags: "QIWA_POC"
       +target_database: STAGING
       +target_schema: QIWA
       +materialized: table

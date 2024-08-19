@@ -1,15 +1,23 @@
+{{ config(materialized="view") }}
 
-{{ config(
-     materialized='view'
+with
+    source_data as (
+        select
+            pk_loaddedsubservices,
+            subservicenamear,
+            subservicenameen,
+            statusid,
+            fk_serviceid,
+            requesteridno,
+            requestername,
+            requesteruserid,
+            creationdate,
+            createdby,
+            lastmodifieddate,
+            lastmodifiedby
+        from {{ source("qiwa", "LOADDEDSUBSERVICES") }}
 
-) }}
-
-with source_data as (
-select PK_LOADDEDSUBSERVICES, SUBSERVICENAMEAR, SUBSERVICENAMEEN, STATUSID, FK_SERVICEID, REQUESTERIDNO, REQUESTERNAME, REQUESTERUSERID, CREATIONDATE, CREATEDBY, LASTMODIFIEDDATE, LASTMODIFIEDBY
-from    {{ source('qiwa','LOADDEDSUBSERVICES') }}
- 
-)
+    )
 
 select *
 from source_data
-
