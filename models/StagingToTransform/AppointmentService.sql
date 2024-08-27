@@ -29,8 +29,8 @@ with
             bb.lastmodifieddate as subservice_lastmodifieddate,
             lastmodifiedby
 
-        from {{ ref('vw_loaddedservices') }} aa
-        left join {{ ref('vw_loaddedsubservices') }} bb on (aa.id = bb.fk_serviceid)
+        from {{ ref('VW_LOADDEDSERVICES') }} aa
+        left join {{ ref('VW_LOADDEDSUBSERVICES') }} bb on (aa.id = bb.fk_serviceid)
 
     )
 
