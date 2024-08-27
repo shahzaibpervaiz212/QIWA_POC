@@ -1,0 +1,12 @@
+version: 2
+ 
+models:
+  - name: factlaborofficeappointments
+    description: "This model contains the final transformed data loaded into the DWH."
+    columns:
+      - name: appointmentid
+        description: "Unique identifier for each record."
+        tests:
+          - not_null:  # Ensure the 'id' column does not contain null values
+          - unique:    # Ensure the 'id' column has unique values
+      
