@@ -7,7 +7,7 @@
 with
     factlaborofficeappointments as (
 
-        select
+select
 
             id as appointmentid,
             officeid,
@@ -35,13 +35,11 @@ with
             status6date,
             --realsessiontime,
             visitreasonid,
-            CASE WHEN ISNULL(visitreasonid,1) = 1 THEN N''حضوري'' ELSE N''افتراضي'' END AS AppointmentTypeAr,
-            CASE WHEN ISNULL(visitreasonid,1) = 1 THEN 'Physical'  ELSE 'Virtual' END AS AppointmentTypeEn ,
+            CASE WHEN COALESCE(visitreasonid,'1') = '1' THEN 'حضوري' ELSE 'افتراضي' END AS AppointmentTypeAr,
+            CASE WHEN COALESCE(visitreasonid,'1') = '1' THEN 'Physical'  ELSE 'Virtual' END AS AppointmentTypeEn ,
             substring(realsessiontime, CHARINDEX('minutes',realsessiontime) + len(' minutes') ,(CHARINDEX(' seconds',realsessiontime))  - (CHARINDEX('minutes',realsessiontime) + len(' minutes'))) RealSessionTime, 
             weblink,
             meetingid
-
-
 
         from {{ ref("VW_LABOROFFICEAPPOINTMENT") }} 
       
