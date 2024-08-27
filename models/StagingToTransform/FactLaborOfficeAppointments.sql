@@ -9,7 +9,7 @@ with
 
 select
 
-            NULL as appointmentid,
+            appointmentid,
             officeid,
             laborofficeid,
             sequencenumber,
