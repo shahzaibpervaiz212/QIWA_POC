@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 with
-    source_data as (
+    DimAppointmentService as (
 
         select
             id,
@@ -35,4 +35,4 @@ with
     )
 
 select *
-from source_data
+from DimAppointmentService
