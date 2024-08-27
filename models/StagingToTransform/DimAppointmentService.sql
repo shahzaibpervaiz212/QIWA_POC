@@ -1,4 +1,8 @@
-{{ config(materialized="table") }}
+{{ config(
+        materialized="table",
+        target_schema=   "APPOINTMENT",
+        target_database= "TRANSFORMED"
+) }}
 
 with
     DimAppointmentService as (
