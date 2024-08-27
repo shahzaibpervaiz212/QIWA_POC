@@ -7,11 +7,11 @@ with
     DimAppointmentService as (
 
         select
-            id,
-            servicenamear,
-            servicenameen,
-            aa.statusid as service_statusid,
-            aa.creationdate as service_creationdate,
+            id AS ServiceId,
+            servicenamear  as ServiceNameAr,
+            servicenameen as ServiceNameEn,
+            aa.statusid as Service_Statusid,
+            aa.creationdate as Service_creationdate,
             aa.lastmodifieddate as service_lastmodifieddate,
             aa.requesteridno as service_requesteridno,
             aa.requestername as service_requestername,
@@ -33,7 +33,7 @@ with
             lastmodifiedby
 
         from {{ ref('VW_LOADDEDSERVICES') }} aa
-        left join {{ ref('VW_LOADDEDSUBSERVICES') }} bb on (aa.id = bb.fk_serviceid)
+        right join {{ ref('VW_LOADDEDSUBSERVICES') }} bb on (aa.id = bb.fk_serviceid)
 
     )
 
