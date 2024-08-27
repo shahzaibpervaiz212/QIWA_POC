@@ -45,8 +45,8 @@ models:
       +target_schema: QIWA
       +materialized: table
     StagingToTransform:
-      +database: TRANSFORMED
       +tags: "QIWA_POC"
+      +database: TRANSFORMED
       +schema: APPOINTMENT
       +materialized: table  
 snapshots:

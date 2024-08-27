@@ -1,7 +1,6 @@
 {{ config(
         materialized="table",
-        target_schema=   "APPOINTMENT",
-        target_database= "TRANSFORMED"
+
 ) }}
 
 with
