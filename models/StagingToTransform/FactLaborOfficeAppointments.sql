@@ -8,7 +8,7 @@ with
     factlaborofficeappointments as (
 
 select
-
+            null as test,
             id as appointmentid,
             officeid,
             laborofficeid,
